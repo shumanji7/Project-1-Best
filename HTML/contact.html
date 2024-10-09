@@ -13,7 +13,7 @@
     <p><strong>Names:</strong> Nik Weisbloom, Roberto Santos, Mitesh Patel, Jacob Shuman, Khalil Nusradinov</p>
     <p><strong>Email:</strong> <a href="mailto:youremail@example.com">wrnikweisbloom@gmail.com</a></p>
 
-    <h2>Follow Us our Githubs!</h2>
+    <h2>Follow Us on our Githubs!</h2>
     <ul>
         <li><a href="https://github.com/nikweisbloom">Nik</a></li>
         <li><a href="https://github.com/roberto4tisantos">Roberto</a></li>
@@ -23,7 +23,7 @@
     </ul>
 
     <h2>Contact Form</h2>
-    <form>
+    <form id="contactForm">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
         <label for="email">Email:</label><br>
@@ -32,6 +32,27 @@
         <textarea id="message" name="message"></textarea><br>
         <button type="submit">Submit</button>
     </form>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert("Please enter information on all fields of the form.");
+                return;
+            }
+            const collectedData = {
+                name: name,
+                email: email,
+                message: message
+            };
+            localStorage.setItem('formData', JSON.stringify(collectedData));
+            console.log ('Collected Data:', collectedData);
+        });
+        </script>
 
     <button onclick="goBack()">Go Back</button>
 
