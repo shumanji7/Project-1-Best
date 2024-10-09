@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! See our other work on Github!</p>
+
+    <h2>Contact Information</h2>
+    <p><strong>Names:</strong> Nik Weisbloom, Roberto Santos, Mitesh Patel, Jacob Shuman, Khalil Nusradinov</p>
+    <p><strong>Email:</strong> <a href="mailto:youremail@example.com">wrnikweisbloom@gmail.com</a></p>
+
+    <h2>Follow Us our Githubs!</h2>
+    <ul>
+        <li><a href="https://github.com/nikweisbloom">Nik</a></li>
+        <li><a href="https://github.com/roberto4tisantos">Roberto</a></li>
+        <li><a href="https://github.com/mitesh18us">Mitesh</a></li>
+        <li><a href="https://github.com/khalilnusradinov">Khalil</a></li>
+        <li><a href="https://github.com/shumanji7">Jacob</a></li>
+    </ul>
+
+    <h2>Contact Form</h2>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
