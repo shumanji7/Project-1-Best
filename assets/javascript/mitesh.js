@@ -5,7 +5,6 @@ const rightLabel = document.querySelector("label[for='right']");
 const wrongLabel = document.querySelector("label[for='wrong']");
 const wrong1Label = document.querySelector("label[for='wrong1']");
 
-
 right.addEventListener('change', event => {
 
     if(event.target.checked) {
