@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Student Profile</title>
+</head>
+<body>
+
+<header>
+    <h1>BASIC STUDENT ASSESSMENT</h1>
+</header>
+
+<nav>
+    <a href="#info">Welcome to Basic Student Assessment Quiz.</a>
+</nav>
+
+<main>
+    <div id="info">
+        <h2>Student</h2>
+        <p>Provide the following information:</p>
+        <form>
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name" name="student-name" required>
+    
+            <label for="school-name">School Name:</label>
+            <input type="text" id="school-name" name="school-name" required>
+    
+            <button type="submit">Submit</button>
+        </form>        
+    </div>
+
+    <div id="assignments">
+        <h2>Assignments</h2>
+        <p>List of assignments will be displayed here.</p>
+        <form>
+            <div class="question">
+                <h2>Question 1: What is the capital of France?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> A) Berlin</label><br>
+                    <label><input type="radio" name="q1" value="B"> B) Madrid</label><br>
+                    <label><input type="radio" name="q1" value="C"> C) Paris</label>
+                </div>
+            </div>   
+            <div class="question">
+                <h2>Question 2: Which of the following is a programming language?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> A) HTML</label><br>
+                    <label><input type="radio" name="q2" value="B"> B) JPEG</label><br>
+                    <label><input type="radio" name="q2" value="C"> C) CSS</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 3: What is the largest planet in our solar system?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> A) Earth</label><br>
+                    <label><input type="radio" name="q3" value="B"> B) Jupiter</label><br>
+                    <label><input type="radio" name="q3" value="C"> C) Mars</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 4: Which animal is known as the "King of the Jungle"?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> A) Elephant</label><br>
+                    <label><input type="radio" name="q4" value="B"> B) Lion</label><br>
+                    <label><input type="radio" name="q4" value="C"> C) Tiger</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 5: What is the process by which plants make their food called?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> A) Photosynthesis</label><br>
+                    <label><input type="radio" name="q5" value="B"> B) Respiration</label><br>
+                    <label><input type="radio" name="q5" value="C"> C) Digestion</label>
+                </div>
+            </div>
+            <button type="submit">Submit Answers</button>                                                                 
+        </form>
+    </div>
+
+    <div id="grades">
+        <h2>Grades</h2>
+        <p>Your grades for the semester will be listed here.</p>
+    </div>
+
+    <div id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li>Jacob Shuman</li>
+            <p>github: shumanji7</p>
+            <li>Mitesh Patel</li>
+            <p>github: mitesh18us</p>
+            <li>Roberto Forti Santos</li>
+            <p>github: roberto4tisantos</p>
+            <li>Khalil Nusradinov</li>
+            <p>github: khalilnusradinov</p>
+            <li>Nik Weisbloom</li>
+            <p>github: nikweisbloom</p>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
