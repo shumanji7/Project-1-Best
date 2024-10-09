@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Student Profile</title>
 </head>
 <body>
@@ -85,18 +86,13 @@
 
     <div id="contact">
         <h2>Contact</h2>
-        <ul>
-            <li>Jacob Shuman</li>
-            <p>github: shumanji7</p>
-            <li>Mitesh Patel</li>
-            <p>github: mitesh18us</p>
-            <li>Roberto Forti Santos</li>
-            <p>github: roberto4tisantos</p>
-            <li>Khalil Nusradinov</li>
-            <p>github: khalilnusradinov</p>
-            <li>Nik Weisbloom</li>
-            <p>github: nikweisbloom</p>
-        </ul>
+        <button id="contactButton">Contact Us</button>
+
+    <script>
+        document.getElementById('contactButton').addEventListener('click', function() {
+            window.location.href = 'contact.html';
+        });
+    </script>
     </div>
 </main>
 
