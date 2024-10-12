@@ -6,6 +6,7 @@ const wrongLabel = document.querySelector("label[for='wrong']");
 const wrong1Label = document.querySelector("label[for='wrong1']");
 const addBtn = document.querySelector('#button');
 const messageEl = document.querySelector('.message')
+const gifContainer = document.getElementById('gif-container');
 
 
 right.addEventListener('change', event => {
@@ -43,30 +44,38 @@ addBtn.addEventListener('click', function () {
     
     if(right.checked) {
         rightLabel.style.color = "green";
-        messageEl.textContent = "Your answer was right";
+        messageEl.textContent = "Your answer is right";
+        
+        
+        const gifImage = document.createElement('img');
+        gifImage.src = 'https://media1.tenor.com/m/c_na_nplHM4AAAAC/the-office-dwight-schrute.gif';
+        gifContainer.appendChild(gifImage);
+
         console.log('Right Answer');
     } 
     
     if(wrong.checked) {
         wrongLabel.style.color = "red";
         messageEl.textContent = "Better luck next time";
+
+        const gifImage = document.createElement('img');
+        gifImage.src = 'https://media1.tenor.com/m/YsGxWABzct4AAAAd/death-stare-black-snake-moan.gif';
+        gifContainer.appendChild(gifImage);
+        
         console.log('Wrong Answer');
     }
 
     if(wrong1.checked) {
         wrong1Label.style.color = "red";
-        messageEl.textContent = "Better luck next time";
-        console.log('Wrong Answer');
+        messageEl.textContent = "Better luck next time.";
+
+        const gifImage = document.createElement('img');
+        gifImage.src = 'https://media1.tenor.com/m/YsGxWABzct4AAAAd/death-stare-black-snake-moan.gif';
+        gifContainer.appendChild(gifImage);
+
+        console.log('Wrong Answer your score is `${score}`');
     }
     
 });
   
   
-  
-  //right.addEventListener('change', event => {
-    //if(event.target.checked) {
-    //console.log('You are right');
-    //rightLabel.style.color = "green";
-    //} else{
-      //  rightLabel.style.color = "black";
-    //}
