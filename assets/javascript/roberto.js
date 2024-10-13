@@ -72,7 +72,7 @@ function generateStudentId() {
 
 function getSelectedValue(radios) {
 
-    const studentAnswers = []; // RFS INCLUDE CODE    
+    let studentA = []; // RFS INCLUDE CODE    
     let pos = 0; 
 
     for (const radioGroup of radios) {
@@ -83,14 +83,14 @@ function getSelectedValue(radios) {
             if (radio.checked) {
                 selectedValue = radio.value; // Get the selected radio button's value
 
-                studentAnswers[pos] = selectedValue; // RFS INCLUDE CODE
+                studentA[pos] = selectedValue; // RFS INCLUDE CODE
+                console.log(studentA);
 
                 question = "Question " + (pos + 1) + " you selected " + selectedValue;
                 alert(question);
                 break; // Exits loop
                 }
-            }
-        }
+            }        
 
         if (selectedValue) {
             if (answers[pos] === selectedValue) {
@@ -102,8 +102,9 @@ function getSelectedValue(radios) {
         }
         pos++; // Move to the next question
     }
-    return studentAnswers;
-}
+        
+        return studentA;
+    }
 
 //DOM
 document.getElementById('checkAnswer').addEventListener('click', function() {
@@ -116,8 +117,8 @@ document.getElementById('checkAnswer').addEventListener('click', function() {
     arrayRadios.push(document.getElementsByName('q5'));  
 
     //get array[]        
-    const studentAnswers = [];
-    studentAnswers = getSelectedValue(arrayRadios);                    
+    let studentAnswers = [];
+    studentAnswers = getSelectedValue(arrayRadios);                 
 
     //create object localdata
     const localdata = {
