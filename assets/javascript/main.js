@@ -1,7 +1,6 @@
 
 const btn = document.getElementById("checkAnswer");
 const resultEl = document.getElementById("grades");
-const labels = document.querySelectorAll("label");
         
     
     btn.addEventListener("click", () => {
