@@ -142,6 +142,17 @@
         color: black; /* Optional: Change text color for better contrast */
         border: 1px solid #ccc; /* Optional: Add a border for better visibility */
         }
+
+        /* table {
+        width:100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        }
+
+        td{
+        text-align: center;
+        border:4px solid black;
+        }         */
     </style>
 </head>
 <body>
@@ -176,8 +187,6 @@
                 <option value="school4">School Four</option>
             </select>
             <!-- /* RFS INCLUDE HTML CODE */ -->
-    
-            <button type="button">Previews Assessments</button>
         </form>        
     </div>
 
@@ -229,12 +238,44 @@
     </div>
     <button id="checkAnswer" type="submit">Submit Answers</button> <!--RFS CHANGES BUTTON-->
 
-    <script src="/assets/javascript/roberto.js"></script> <!--RFS INCLUDED JAVASCRIPT-->
-
+    <!--RFS CHANGES BUTTON-->          
     <div id="grades">
         <h2>Grades</h2>
-        <p>Your grades for the semester will be listed here.</p>
+        <p>Your assessments for this session will be listed here:</p>
+        <div class="wrapper">
+            <!-- <header>
+              <h1>Employee Payroll Tracker</h1>
+            </header> -->
+            <div class="card">
+              <!-- <div class="card-header"> -->
+               <!-- <h2>Employee Roster</h2> -->
+              <!-- </div> -->
+              <div class="card-body">
+               <table>
+                <thead>
+                  <tr>
+                    <th>Student ID</th>                    
+                    <th>Name</th>
+                    <th>School</th>
+                    <th>Grade</th>                    
+                  </tr>
+                </thead>
+                <tbody id="assessments-table">
+                </tbody>
+               </table>
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+          </div>   
+          <!-- <button type="button" id="add-assessments-btn" class="btn">List of Assessment</button>
+            -->
+            <button type="button" id="add-assessments-btn" class="btn">List of Assessment</button>          
+          <!-- <button id="add-employees-btn" class="btn">Add Employees</button>          
+          <button id="checkAnswer" type="submit">Submit Answers</button> -->
     </div>
+
+    <script src="/assets/javascript/roberto.js"></script> <!--RFS INCLUDED JAVASCRIPT-->    
 
     <div id="contact">
         <h2>Contact</h2>
