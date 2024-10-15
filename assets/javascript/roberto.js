@@ -9,6 +9,11 @@
 //answers.q5 = "A";
 
 const answers = ["C","A","B","B","A"];
+let studentScoreArray = [];    
+let arrayOfArrays = []; // RFS INCLUDE CODE 
+// let index = 0;
+
+const addStudentAssessmentsBtn = document.querySelector('#add-assessments-btn');
 
 // function getSelectedValue(radios) {
 
@@ -72,8 +77,9 @@ function generateStudentId() {
 
 function getSelectedValue(radios) {
 
-    let studentA = []; // RFS INCLUDE CODE    
-    let pos = 0; 
+    let pos = 0;         
+    let okayA = 0;
+    let studentA = []; // RFS INCLUDE CODE
 
     for (const radioGroup of radios) {
         let selectedValue = ""; 
@@ -84,7 +90,8 @@ function getSelectedValue(radios) {
                 selectedValue = radio.value; // Get the selected radio button's value
 
                 studentA[pos] = selectedValue; // RFS INCLUDE CODE
-                console.log(studentA);
+                arrayOfArrays.push(studentA);
+                //console.log(studentA);
 
                 question = "Question " + (pos + 1) + " you selected " + selectedValue;
                 alert(question);
@@ -93,17 +100,25 @@ function getSelectedValue(radios) {
             }        
 
         if (selectedValue) {
-            if (answers[pos] === selectedValue) {
+            if (answers[pos] === selectedValue) {                
+                okayA ++;
                 alert("ANSWER OKAY!");
                 //Can style red/green here
             }
         } else {
             alert("Question " + (pos + 1) + " no option selected.Must be selected to save grade.");
         }
+
         pos++; // Move to the next question
     }
-        
-        return studentA;
+
+        // arrayOfArrays[index].push(studentA);
+        // index ++;
+
+        //Calculate grade
+        let stdScore = ( okayA / 5 ) * 100;
+        //return studentA, grade;
+        return stdScore + "%";
     }
 
 //DOM
@@ -117,28 +132,104 @@ document.getElementById('checkAnswer').addEventListener('click', function() {
     arrayRadios.push(document.getElementsByName('q5'));  
 
     //get array[]        
-    let studentAnswers = [];
-    studentAnswers = getSelectedValue(arrayRadios);                 
+    // let studentAnswers = [];
+    // studentAnswers = getSelectedValue(arrayRadios);                 
+    let studentScore = getSelectedValue(arrayRadios);
 
     //create object localdata
     const localdata = {
-        id: document.getElementById('student-id').value = generateStudentId(),
-        student: document.getElementById('student-name').value,
-        school: document.getElementById('school-name').value,
-        answers: studentAnswers,
+        stdId: document.getElementById('student-id').value = generateStudentId(),
+        stdName: document.getElementById('student-name').value,
+        stdSchool: document.getElementById('school-name').value,
+        stdScore: studentScore,
         // grade: grade.value,
+        // <th>Student ID</th>                    
+        // <th>Name</th>
+        // <th>School</th>
+        // <th>Grade</th>                            
       };
     
     localStorage.setItem('studentData', JSON.stringify(localdata));
-
 });
 
-window.onload = function() {
-    document.getElementById('student-name').value = "";
-    document.getElementById('school-name').value = "";            
-    // const localdata = JSON.parse(localStorage.getItem('studentData'));
-    // if (localdata) {
-    //     document.getElementById('student-name').value = localdata.student;
-    //     document.getElementById('school-name').value = localdata.school;        
-    // }
-};
+// Display student Avarage Score data in an HTML table
+const displayAverageScores = function() {
+
+    const localData = JSON.parse(localStorage.getItem('studentData'));
+    let index = 0;
+
+    for (let key in localData){
+        // let value = localData[key];
+        // let value = localStorage.getItem(key);
+        // let key = data.key();        
+        studentScoreArray[index] = localData[key];
+        // studentScoreArray[index].push(data.stdId);
+        // studentScoreArray[index].push(data.stdName);    
+        // studentScoreArray[index].push(data.stdSchool);    
+        // studentScoreArray[index].push(data.stdScore);            
+        index ++;        
+    }
+
+    // Get the employee table
+    const studentTable = document.querySelector('#assessments-table');
+  
+    // Clear the employee table
+    studentTable.innerHTML = '';
+  
+    //=========================================================
+    // Loop through the employee data and create a row for each employee
+    //  for (let i = 0; i < studentScoreArray.length; i++) {        
+    //    let currentScore = studentScoreArray[i];
+      
+       const newTableRow = document.createElement("tr");  
+
+       const studentId = document.createElement("td");
+    //    studentId.textContent = studentScoreArray.stdId;
+       studentId.textContent = studentScoreArray[0];
+       newTableRow.append(studentId);
+
+       const studentName = document.createElement("td");
+    //    studentName.textContent =studentScoreArray.stdName;
+       studentName.textContent = studentScoreArray[1];
+       newTableRow.append(studentName);      
+
+       const studentSchool = document.createElement("td");
+    //    studentSchool.textContent = studentScoreArray.stdSchool;
+       studentSchool.textContent = studentScoreArray[2];
+       newTableRow.append(studentSchool);            
+  
+       const studentScore = document.createElement("td");
+    //    studentScore.textContent = studentScoreArray.stdScore;
+       studentScore.textContent = studentScoreArray[3];
+       newTableRow.append(studentScore);           
+
+    // //   const salaryCell = document.createElement("td");
+    //   // Format the salary as currency
+    // //   salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US",{
+    // //     style:"currency",
+    // //     currency:"USD"
+    // //   });
+  
+    //   newTableRow.append(salaryCell);
+  
+       studentTable.append(newTableRow);
+    //  }
+    //=========================================================
+  }
+
+//addStudentAssessmentsBtn.addEventListener('click', displayAverageScores);
+
+// Add event listener to 'Add Student Assessments' button
+ addStudentAssessmentsBtn.addEventListener('click', () => {
+     displayAverageScores();
+  } );
+
+// window.onload = function() {
+//     document.getElementById('student-name').value = "";
+//     document.getElementById('school-name').value = "";            
+//     // const localdata = JSON.parse(localStorage.getItem('studentData'));
+//     // if (localdata) {
+//     //     document.getElementById('student-name').value = localdata.student;
+//     //     document.getElementById('school-name').value = localdata.school;        
+//     // }
+// };
