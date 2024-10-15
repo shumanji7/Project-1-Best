@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Time is up!</title>
+    <style>
+        body {
+            background-color: rgb(199, 213, 231) ; 
+        }
+
+        h1, h2, h3, h4{
+            text-align: center;
+            font-size: 50px;
+            margin: 3% 25%;
+        }
+
+        img{
+            margin-left: 42%;
+        }
+
+        #retake{
+            text-align: center;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            max-width: 200px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }    
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Your time is up! Your final score has been submitted.</h1>
+    </header>
+    <main>
+        <img src="/assets/css/images/explosion.gif" alt="explosion" width="250" height="250">
+    <h2>Your score is: </h2>
+    <h3>Please click below to retake the test!
+    <button id="retake">Retake Test</button>
+    </h3>
+    </main>
+    <script>
+         document.getElementById('retake').addEventListener('click', function() {
+                window.location.href = "/HTML/jacob.html"
+            });
+    </script>
+
+<footer>
+    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
+    <div id="contact">
+        <h2>Contact</h2>
+        <button id="contactButton">Contact Us</button> 
+
+    </div>
+        <script>
+            document.getElementById('contactButton').addEventListener('click', function() {
+                window.location.href = "/HTML/contact.html"
+            });
+        </script>
+</footer>
+</body>
