@@ -54,11 +54,27 @@ function generateStudentId() {
             } else {select5.parentElement.style.color = "#ff2400";   
             };
         
-  
-        
         resultEl.textContent = `You got ${score} out of 5 right`;
 
+        //INCLUDED ROBERTO - BEGIN
+        //set array[]
+        arrayRadios.push(document.getElementsByName('q1'));
+        arrayRadios.push(document.getElementsByName('q2'));
+        arrayRadios.push(document.getElementsByName('q3'));
+        arrayRadios.push(document.getElementsByName('q4'));
+        arrayRadios.push(document.getElementsByName('q5'));  
+        let studentScore = getSelectedValue(arrayRadios);
 
+        //create object localdata
+        const localdata = {
+            stdAssId: generateStudentId(),
+            stdName: document.getElementById('student-name').value,
+            stdSchool: document.getElementById('school-name').value,
+            stdScore: studentScore,                            
+        };
+        
+        localStorage.setItem('studentData', JSON.stringify(localdata));        
+        //INCLUDED ROBERTO - END        
     });
 
 
