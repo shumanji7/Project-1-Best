@@ -57,6 +57,7 @@ function generateStudentId() {
         resultEl.textContent = `You got ${score} out of 5 right`;
 
         //INCLUDED ROBERTO - BEGIN
+        let stdScore = ( score / 5 ) * 100;
         //set array[]
         arrayRadios.push(document.getElementsByName('q1'));
         arrayRadios.push(document.getElementsByName('q2'));
@@ -70,7 +71,7 @@ function generateStudentId() {
             stdAssId: generateStudentId(),
             stdName: document.getElementById('student-name').value,
             stdSchool: document.getElementById('school-name').value,
-            stdScore: studentScore,                            
+            stdScore: stdScore,                            
         };
         
         localStorage.setItem('studentData', JSON.stringify(localdata));        
