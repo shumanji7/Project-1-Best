@@ -63,8 +63,7 @@ function generateStudentId() {
         arrayRadios.push(document.getElementsByName('q2'));
         arrayRadios.push(document.getElementsByName('q3'));
         arrayRadios.push(document.getElementsByName('q4'));
-        arrayRadios.push(document.getElementsByName('q5'));  
-        let studentScore = getSelectedValue(arrayRadios);
+        arrayRadios.push(document.getElementsByName('q5')); 
 
         //create object localdata
         const localdata = {
