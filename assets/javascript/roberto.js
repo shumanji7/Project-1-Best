@@ -9,7 +9,9 @@
 //answers.q5 = "A";
 
 const answers = ["C","A","B","B","A"];
-let studentScoreArray = []; 
+let studentScoreArray = [];    
+let arrayOfArrays = []; // RFS INCLUDE CODE 
+// let index = 0;
 
 const addStudentAssessmentsBtn = document.querySelector('#add-assessments-btn');
 
@@ -75,21 +77,20 @@ function generateStudentId() {
 
 function getSelectedValue(radios) {
 
-    let studentA = []; // RFS INCLUDE CODE    
     let pos = 0;         
     let okayA = 0;
+    let studentA = []; // RFS INCLUDE CODE
 
     for (const radioGroup of radios) {
         let selectedValue = ""; 
         let question = "";
-
 
         for (const radio of radioGroup) {
             if (radio.checked) {
                 selectedValue = radio.value; // Get the selected radio button's value
 
                 studentA[pos] = selectedValue; // RFS INCLUDE CODE
-                okayA ++;
+                arrayOfArrays.push(studentA);
                 //console.log(studentA);
 
                 question = "Question " + (pos + 1) + " you selected " + selectedValue;
@@ -99,19 +100,25 @@ function getSelectedValue(radios) {
             }        
 
         if (selectedValue) {
-            if (answers[pos] === selectedValue) {
+            if (answers[pos] === selectedValue) {                
+                okayA ++;
                 alert("ANSWER OKAY!");
                 //Can style red/green here
             }
         } else {
             alert("Question " + (pos + 1) + " no option selected.Must be selected to save grade.");
         }
+
         pos++; // Move to the next question
     }
+
+        // arrayOfArrays[index].push(studentA);
+        // index ++;
+
         //Calculate grade
         let stdScore = ( okayA / 5 ) * 100;
         //return studentA, grade;
-        return stdScore;
+        return stdScore + "%";
     }
 
 //DOM
@@ -151,9 +158,11 @@ const displayAverageScores = function() {
     const localData = JSON.parse(localStorage.getItem('studentData'));
     let index = 0;
 
-    for (let data in localData){
+    for (let key in localData){
+        // let value = localData[key];
+        // let value = localStorage.getItem(key);
         // let key = data.key();        
-        studentScoreArray[index] = localStorage.getItem('stdId');
+        studentScoreArray[index] = localData[key];
         // studentScoreArray[index].push(data.stdId);
         // studentScoreArray[index].push(data.stdName);    
         // studentScoreArray[index].push(data.stdSchool);    
@@ -169,25 +178,29 @@ const displayAverageScores = function() {
   
     //=========================================================
     // Loop through the employee data and create a row for each employee
-     for (let i = 0; i < studentScoreArray.length; i++) {        
-       let currentScore = studentScoreArray[i];
+    //  for (let i = 0; i < studentScoreArray.length; i++) {        
+    //    let currentScore = studentScoreArray[i];
       
        const newTableRow = document.createElement("tr");  
 
        const studentId = document.createElement("td");
-       studentId.textContent = studentScoreArray.stdId;
+    //    studentId.textContent = studentScoreArray.stdId;
+       studentId.textContent = studentScoreArray[0];
        newTableRow.append(studentId);
 
        const studentName = document.createElement("td");
-       studentName.textContent =studentScoreArray.stdName;
+    //    studentName.textContent =studentScoreArray.stdName;
+       studentName.textContent = studentScoreArray[1];
        newTableRow.append(studentName);      
 
        const studentSchool = document.createElement("td");
-       studentSchool.textContent = studentScoreArray.stdSchool;
+    //    studentSchool.textContent = studentScoreArray.stdSchool;
+       studentSchool.textContent = studentScoreArray[2];
        newTableRow.append(studentSchool);            
   
        const studentScore = document.createElement("td");
-       studentScore.textContent = studentScoreArray.stdScore;
+    //    studentScore.textContent = studentScoreArray.stdScore;
+       studentScore.textContent = studentScoreArray[3];
        newTableRow.append(studentScore);           
 
     // //   const salaryCell = document.createElement("td");
@@ -200,7 +213,7 @@ const displayAverageScores = function() {
     //   newTableRow.append(salaryCell);
   
        studentTable.append(newTableRow);
-     }
+    //  }
     //=========================================================
   }
 
