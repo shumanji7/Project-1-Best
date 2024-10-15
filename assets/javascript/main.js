@@ -1,8 +1,21 @@
 
 const btn = document.getElementById("checkAnswer");
 const resultEl = document.getElementById("grades");
-        
-    
+
+//INCLUDED ROBERTO - BEGIN
+function generateStudentId() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let studentId = '';
+    const length = 8; // Specify the desired length of the ID
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        studentId += characters.charAt(randomIndex);
+    }
+    return studentId.toUpperCase();
+}    
+//INCLUDED ROBERTO - END
+
     btn.addEventListener("click", () => {
 
 
