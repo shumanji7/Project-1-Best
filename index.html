@@ -136,8 +136,24 @@
                 width: 100%;
             }
         }
+        
+        #timer {
+            position: fixed;
+            right: 5%;
+            bottom: 65%;
+            flex-wrap;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #timer #time{
+            color: red;
+            font-size: 50px;
+        }
     </style>
+
 </head>
+
 <body>
 
 <header>
@@ -212,15 +228,46 @@
     <button id="checkAnswer" type="submit">Submit Answers</button> <!--RFS CHANGES BUTTON-->
 
 
-
     <div id="grades">
         <h2>Grades</h2>
         <p>Your grades for the semester will be listed here.</p>
     </div>
 
-    <script src="/Project-1-Best/assets/javascript/main.js"></script>
+    <div id="timer">
+        You have <br><span id="time">1:00</span> <br>remaining!
+    </div>
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
 
+                minutes = minutes < 10 ? minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                timer--;
+                if (timer < 0){
+                    window.location.href = "/HTML/Time_Up.html";
+                }
+            }, 1000)
+        }
 
+        window.onload = function () {
+            let max = 60,
+            display = document.querySelector('#time');
+            startTimer(max, display);
+        };
+
+    </script>
+
+    <script src="/assets/javascript/main.js"></script>
+
+   
+</main>
+
+<footer>
+    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
     <div id="contact">
         <h2>Contact</h2>
         <button id="contactButton">Contact Us</button>
@@ -231,10 +278,6 @@
             });
         </script>
     </div>
-</main>
-
-<footer>
-    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
 </footer>
 </body>
 </html>

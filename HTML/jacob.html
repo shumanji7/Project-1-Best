@@ -3,6 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Student ProfileJ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            max-width: 200px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        #grades, #contact {
+            margin-top: 40px;
+        }
+
+        #grades p, #contact p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+        /* RFS INCLUDE CSS CODE */
+        #student-id {
+        background-color: silver;
+        color: black; /* Optional: Change text color for better contrast */
+        border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+        }
+
+        /* table {
+        width:100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        }
+
+        td{
+        text-align: center;
+        border:4px solid black;
+        }         */
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BASIC STUDENT ASSESSMENT</h1>
+</header>
+
+<nav>
+    <a href="#info">Welcome to Basic Student Assessment Quiz.</a>
+</nav>
+
+<main>
+    <div id="info">
+        <h2>Student</h2>
+        <p>Provide the following information:</p>
+        <form>
+            <!-- /* RFS INCLUDE HTML CODE */ -->
+            <label for="student-id">Student ID:</label>
+            <input type="text" id="student-id" name="student-id" required readonly>
+
+            <label for="student-name">Student Name:</label>
+            <input type="text" id="student-name" name="student-name" required>
+    
+            <!-- <input type="text" id="school-name" name="school-name" required> -->            
+            <label for="school-name">Select School:</label>
+            <!-- code added -->
+            <select id="school-name" name="school-name" required>
+                <option value="school1">UCF North</option>
+                <option value="school2">UCF East</option>
+                <option value="school3">UCF South</option>
+                <option value="school4">UCF West</option>
+            </select>
+            <!-- /* RFS INCLUDE HTML CODE */ -->
+        </form>        
+    </div>
+
+    <!--<div id="assignments">
+        <h2>Assignments</h2>
+        <p>List of assignments will be displayed here.</p>-->
+        <form>
+            <div class="question">
+                <h2>Question 1: What is the capital of France?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> A) Berlin</label><br>
+                    <label><input type="radio" name="q1" value="B"> B) Madrid</label><br>
+                    <label><input type="radio" name="q1" value="C"> C) Paris</label>
+                </div>
+            </div>   
+            <div class="question">
+                <h2>Question 2: Which of the following is a programming language?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> A) HTML</label><br>
+                    <label><input type="radio" name="q2" value="B"> B) JPEG</label><br>
+                    <label><input type="radio" name="q2" value="C"> C) CSS</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 3: What is the largest planet in our solar system?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> A) Earth</label><br>
+                    <label><input type="radio" name="q3" value="B"> B) Jupiter</label><br>
+                    <label><input type="radio" name="q3" value="C"> C) Mars</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 4: Which animal is known as the "King of the Jungle"?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> A) Elephant</label><br>
+                    <label><input type="radio" name="q4" value="B"> B) Lion</label><br>
+                    <label><input type="radio" name="q4" value="C"> C) Tiger</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 5: What is the process by which plants make their food called?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> A) Photosynthesis</label><br>
+                    <label><input type="radio" name="q5" value="B"> B) Respiration</label><br>
+                    <label><input type="radio" name="q5" value="C"> C) Digestion</label>
+                </div>
+            </div>                                                                 
+        </form>
+    </div>
+    <button id="checkAnswer" type="submit">Submit Answers</button> <!--RFS CHANGES BUTTON-->
+
+    <!--RFS CHANGES BUTTON-->          
+    <div id="grades">
+        <h2>Grades</h2>
+        <p>Your assessment results for this session will be listed here:</p>
+        <div class="wrapper">
+            <!-- <header>
+              <h1>Employee Payroll Tracker</h1>
+            </header> -->
+            <div class="card">
+              <!-- <div class="card-header"> -->
+               <!-- <h2>Employee Roster</h2> -->
+              <!-- </div> -->
+              <div class="card-body">
+               <table>
+                <thead>
+                  <tr>
+                    <th>Student ID</th>                    
+                    <th>Name</th>
+                    <th>School</th>
+                    <th>Grade</th>                    
+                  </tr>
+                </thead>
+                <tbody id="assessments-table">
+                </tbody>
+               </table>
+              </div>
+              <div class="card-footer">
+              </div>
+            </div>
+          </div>   
+          <!-- <button type="button" id="add-assessments-btn" class="btn">List of Assessment</button>
+            -->
+            <button type="button" id="add-assessments-btn" class="btn">Grade of Assessment</button>          
+          <!-- <button id="add-employees-btn" class="btn">Add Employees</button>          
+          <button id="checkAnswer" type="submit">Submit Answers</button> -->
+    </div>
+
+    <script src="/assets/javascript/roberto.js"></script> <!--RFS INCLUDED JAVASCRIPT-->    
+
+    
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
+    <div id="contact">
+        <h2>Contact</h2>
+        <button id="contactButton">Contact Us</button>
+
+        <script>
+            document.getElementById('contactButton').addEventListener('click', function() {
+                window.location.href = "HTML/contact.html"
+            });
+        </script>
+</footer>
+</body>
+</html>
+
+<!--<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Student Profile</title>
     <style>
         body {
@@ -223,9 +520,9 @@
             </div>                                                                 
         </form>
     </div>
-    <button id="checkAnswer" type="submit">Submit Answers</button> <!--RFS CHANGES BUTTON-->
+    <button id="checkAnswer" type="submit">Submit Answers</button> <!--RFS CHANGES BUTTON-
 
-    <script src="/assets/javascript/jacob.js"></script> <!--RFS INCLUDED JAVASCRIPT-->
+    <script src="/assets/javascript/jacob.js"></script> <!--RFS INCLUDED JAVASCRIPT--
 
     <div id="grades">
         <h2>Grades</h2>
@@ -278,4 +575,4 @@
         </script>
 </footer>
 </body>
-</html>
+</html>-->
