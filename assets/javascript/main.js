@@ -1,8 +1,21 @@
 
 const btn = document.getElementById("checkAnswer");
 const resultEl = document.getElementById("grades");
-        
-    
+
+//INCLUDED ROBERTO - BEGIN
+function generateStudentId() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let studentId = '';
+    const length = 8; // Specify the desired length of the ID
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        studentId += characters.charAt(randomIndex);
+    }
+    return studentId.toUpperCase();
+}    
+//INCLUDED ROBERTO - END
+
     btn.addEventListener("click", () => {
 
 
@@ -41,11 +54,28 @@ const resultEl = document.getElementById("grades");
             } else {select5.parentElement.style.color = "#ff2400";   
             };
         
-  
-        
         resultEl.textContent = `You got ${score} out of 5 right`;
 
+        //INCLUDED ROBERTO - BEGIN
+        let stdScore = ( score / 5 ) * 100;
+        //set array[]
+        arrayRadios.push(document.getElementsByName('q1'));
+        arrayRadios.push(document.getElementsByName('q2'));
+        arrayRadios.push(document.getElementsByName('q3'));
+        arrayRadios.push(document.getElementsByName('q4'));
+        arrayRadios.push(document.getElementsByName('q5'));  
+        let studentScore = getSelectedValue(arrayRadios);
 
+        //create object localdata
+        const localdata = {
+            stdAssId: generateStudentId(),
+            stdName: document.getElementById('student-name').value,
+            stdSchool: document.getElementById('school-name').value,
+            stdScore: stdScore,                            
+        };
+        
+        localStorage.setItem('studentData', JSON.stringify(localdata));        
+        //INCLUDED ROBERTO - END        
     });
 
 
