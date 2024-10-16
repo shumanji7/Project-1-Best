@@ -242,10 +242,21 @@
     <div id="grades">
         <h2>Grades</h2>
         <p>Your grades for the semester will be listed here.</p>
+        <table>
+            <thead>
+              <tr>
+                <th>Student ID</th>                    
+                <th>Name</th>
+                <th>School</th>
+                <th>Grade</th>                    
+              </tr>
+            </thead>
+            <tbody id="assessments-table">
+            </tbody>
+        </table>        
     </div>
 
-<<<<<<< HEAD
-    <div id="timer">
+    <!-- <div id="timer">
         You have <br><span id="time">1:00</span> <br>remaining!
     </div>
     <script>
@@ -254,10 +265,6 @@
             setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
-=======
-    <script src="/assets/javascript/main.js"></script>
->>>>>>> c0831f3b53f9c7e1ed0b8204a75338d3dd875132
-
                 minutes = minutes < 10 ? minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
                 display.textContent = minutes + ":" + seconds;
@@ -274,10 +281,20 @@
             startTimer(max, display);
         };
 
-    </script>
+    </script> -->
 
-    <script src="/assets/javascript/main.js"></script>
+    <!-- INCLUDED ROBERTO BEGIN -->
+    <button id="add-assessments-btn">Student Grades</button>
+    <!-- <button type="button" id="add-assessments-btn" class="btn">Grade of Assessment</button>           -->
 
+    <!-- <script>
+        document.getElementById('add-assessments-btn').addEventListener('click', function() {
+            window.location.href = "HTML/grade.html"
+        });
+    </script>     -->
+    <!-- INCLUDED ROBERTO END -->
+
+    <script src="/assets/javascript/main.js"></script>    
    
 </main>
 
