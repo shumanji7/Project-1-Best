@@ -1,42 +1,240 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main h2 {
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            max-width: 200px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        #grades, #contact {
+            margin-top: 40px;
+        }
+
+        #grades p, #contact p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+        
+        #timer {
+            position: fixed;
+            right: 16%;
+            bottom: 65%;
+            flex-wrap: wrap;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #timer {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+
 </head>
+
 <body>
 
-  <header style="font-size: x-large; font-family: Verdana, Ggit peneva, Tahoma, sans-serif; background-color: seagreen; color:white; text-align: center;">Questions</header>
-  
-  <main style="margin-left: 20%; margin-top: 5%;">
+<header>
+    <h1>BASIC STUDENT ASSESSMENT</h1>
+</header>
 
-    <section style="display: block; float: left;">
 
-      <p>1. When is it enough?</p>
+<main>
 
+    <div id="assignments">
+        <h2>Assignments</h2>
+        <p>List of assignments will be displayed here.</p>
+        <form>
+            <div class="question">
+                <h2>Question 1: What is the capital of France?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q1" value=""> A) Berlin</label><br>
+                    <label><input type="radio" name="q1" value=""> B) Madrid</label><br>
+                    <label><input type="radio" name="q1" value="1"> C) Paris</label>
+                </div>
+            </div>   
+            <div class="question">
+                <h2>Question 2: Which of the following is a programming language?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="1"> A) HTML</label><br>
+                    <label><input type="radio" name="q2" value=""> B) JPEG</label><br>
+                    <label><input type="radio" name="q2" value=""> C) CSS</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 3: What is the largest planet in our solar system?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q3" value=""> A) Earth</label><br>
+                    <label><input type="radio" name="q3" value="1"> B) Jupiter</label><br>
+                    <label><input type="radio" name="q3" value=""> C) Mars</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 4: Which animal is known as the "King of the Jungle"?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q4" value=""> A) Elephant</label><br>
+                    <label><input type="radio" name="q4" value="1"> B) Lion</label><br>
+                    <label><input type="radio" name="q4" value=""> C) Tiger</label>
+                </div>
+            </div>
+            <div class="question">
+                <h2>Question 5: What is the process by which plants make their food called?</h2>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="1"> A) Photosynthesis</label><br>
+                    <label><input type="radio" name="q5" value=""> B) Respiration</label><br>
+                    <label><input type="radio" name="q5" value=""> C) Digestion</label>
+                </div>
+            </div>                                                                 
+        </form>
+    </div>
+    <button id="checkAnswer" type="submit">Submit Answers</button>
+
+    <div id="grades" style="color: tomato; font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: bold;">
+        <h2>Grades</h2>
+        <p>Your grades for the semester will be listed here.</p>
+    </div>
+
+    <div id="timer">
       
-      <input type="checkbox" id="wrong1" style="display: block;">
-      <label for="wrong1" style="margin-bottom: 30px;">Never</label>
-      <input type="checkbox" id="wrong" style="display: block;">
-      <label for="wrong" style="margin-bottom: 30px;">Tomorrow</label>
-      <input type="checkbox" id="right" style="display: block; justify-content: space-between;">
-      <label for="right" style="margin-bottom: 20px;">When it is enough</label>
-      <button id="button" style="background-color: midnightblue; color: white; display: block; margin-top: 15px;">Submit</button>
-      
+    </div>
+    
+    <script src="mitesh.js"></script>
+</main>
 
-     
+<footer>
+    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
+    <div id="contact">
+        <h2>Contact</h2>
+        <button id="contactButton">Contact Us</button>
 
-    </section>
-    <section style="display: block; float: right; margin-right: 20%;">
-      
-      <div id="gif-container" style="background-color: white; height: 500px; width: 600px;"></div>
-      
-    </section>
-    <h2 class="message" style="color: darkred; position: absolute; margin-top: 20%;"></h2>
-   
-  </main>
-  <script src="mitesh.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script>
+            document.getElementById('contactButton').addEventListener('click', function() {
+                window.location.href = "HTML/contact.html"
+            });
+        </script>
+    </div>
+</footer>
 </body>
 </html>
