@@ -79,7 +79,7 @@ function getSelectedValue(radios) {
 
     let pos = 0;         
     let okayA = 0;
-    let studentA = []; // RFS INCLUDE CODE
+    let studentA = []; 
 
     for (const radioGroup of radios) {
         let selectedValue = ""; 
