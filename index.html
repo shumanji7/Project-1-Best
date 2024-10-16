@@ -136,8 +136,24 @@
                 width: 100%;
             }
         }
+        
+        #timer {
+            position: fixed;
+            right: 5%;
+            bottom: 65%;
+            flex-wrap;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #timer #time{
+            color: red;
+            font-size: 50px;
+        }
     </style>
+
 </head>
+
 <body>
 
 <header>
@@ -167,7 +183,7 @@
                 <option value="school2">School Two</option>
                 <option value="school3">School Three</option>
                 <option value="school4">School Four</option>
-            </select>
+            </select>            
             <!-- INCLUDED ROBERTO END -->
 
             <!-- <button type="submit">Submit</button> -->
@@ -223,15 +239,50 @@
     <button id="checkAnswer" type="submit">Submit Answers</button>
 
 
-
     <div id="grades">
         <h2>Grades</h2>
         <p>Your grades for the semester will be listed here.</p>
     </div>
 
+<<<<<<< HEAD
+    <div id="timer">
+        You have <br><span id="time">1:00</span> <br>remaining!
+    </div>
+    <script>
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+=======
+    <script src="/assets/javascript/main.js"></script>
+>>>>>>> c0831f3b53f9c7e1ed0b8204a75338d3dd875132
+
+                minutes = minutes < 10 ? minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                timer--;
+                if (timer < 0){
+                    window.location.href = "/HTML/Time_Up.html";
+                }
+            }, 1000)
+        }
+
+        window.onload = function () {
+            let max = 60,
+            display = document.querySelector('#time');
+            startTimer(max, display);
+        };
+
+    </script>
+
     <script src="/assets/javascript/main.js"></script>
 
+   
+</main>
 
+<footer>
+    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
     <div id="contact">
         <h2>Contact</h2>
         <button id="contactButton">Contact Us</button>
@@ -242,10 +293,6 @@
             });
         </script>
     </div>
-</main>
-
-<footer>
-    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
 </footer>
 </body>
 </html>

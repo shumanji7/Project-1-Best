@@ -9,5 +9,5 @@
 ##6.Use client-side storage to store persistent data. 
 ##7.Be responsive. 
 ##8.Have a polished UI. 
-##9.Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.). 
-##10.Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+##9.Have a clean repository that meets qualit y coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.). 
+##10.Have a quality README (with unique name,description, technologies used, screenshot, and link to deployed application).
