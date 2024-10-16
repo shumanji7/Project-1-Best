@@ -54,7 +54,7 @@ function generateStudentId() {
             } else {select5.parentElement.style.color = "#ff2400";   
             };
         
-        resultEl.textContent = `You got ${score} out of 5 right`;
+        resultEl.textContent = `You got ${score} out of 5 right!`;
 
         //INCLUDED ROBERTO - BEGIN
         let stdScore = ( score / 5 ) * 100;
@@ -79,12 +79,36 @@ function generateStudentId() {
     });
 
 
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+            let timerStart = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
 
+                minutes = minutes < 10 ? minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                timer--;
+                if (timer < 0){
+                    window.location.href = "/HTML/Time_Up.html";
+                }
+            }, 1000)
+        document.getElementById("checkAnswer").addEventListener('click', function(){
+            clearInterval(timerStart);
+        });
+        }
 
+       
 
+        window.onload = function () {
+            let max = 60,
+            display = document.querySelector('#time');
+            startTimer(max, display);
+         
+        
+        };
 
-
-
+       
 
 
 // //Simplified roberto's js

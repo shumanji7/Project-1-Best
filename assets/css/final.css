@@ -134,7 +134,7 @@ footer p {
     position: fixed;
     right: 5%;
     bottom: 65%;
-    flex-wrap;
+    flex-wrap: nowrap;
     font-size: 25px;
     text-align: center;
 }
@@ -143,3 +143,10 @@ footer p {
     color: red;
     font-size: 50px;
 }
+
+#student-id {
+    background-color: silver;
+    color: black; /* Optional: Change text color for better contrast */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+}
+

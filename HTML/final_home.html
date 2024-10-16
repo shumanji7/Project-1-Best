@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Welcome!</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/final.css">
+    <link rel="stylesheet" href="../assets/css/final.css">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     </header>
     
     <nav>
-        <a href="#info">Welcome to Basic Student Assessment Quiz.</a>
+        <a href="#info">Welcome to Basic Student Assessment Test.</a>
     </nav>
     
     <main>
@@ -21,13 +21,45 @@
             <h2>Student</h2>
             <p>Provide the following information:</p>
             <form>
+                <!-- /* RFS INCLUDE HTML CODE */ -->
+                <label for="student-id">Student ID:</label>
+                <input type="text" id="student-id" name="student-id" required readonly>
+    
                 <label for="student-name">Student Name:</label>
                 <input type="text" id="student-name" name="student-name" required>
         
-                <label for="school-name">School Name:</label>
-                <input type="text" id="school-name" name="school-name" required>
-        
-                <button type="submit">Submit</button>
-            </form>        
+                <!-- <input type="text" id="school-name" name="school-name" required> -->            
+                <label for="school-name">Select School:</label>
+                <!-- code added -->
+                <select id="school-name" name="school-name" required>
+                    <option value="school1">UCF North</option>
+                    <option value="school2">UCF South</option>
+                    <option value="school3">UCF East</option>
+                    <option value="school4">UCF West</option>
+                </select>
+                <button type="submit" id="submitButton">Submit</button>
+                <script>
+                    document.getElementById('submitButton').addEventListener('click', function() {
+                        confirm("Are you ready? Timer will begin!")
+                        window.location.href = "../index.html";
+                    });
+                </script>
+            </form>                
+                
         </div>
-    
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Assessment. All rights reserved.</p>
+        <div id="contact">
+            <h2>Contact</h2>
+            <button id="contactButton">Contact Us</button>        
+        </div>
+            <script>
+                document.getElementById('contactButton').addEventListener('click', function() {
+                    window.location.href="./contact.html";
+                });
+            </script>
+    </footer>
+</body>
+</html>
