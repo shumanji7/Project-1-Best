@@ -1,7 +1,7 @@
 const btn = document.getElementById("checkAnswer");
 const resultEl = document.getElementById("grades");
 const timeEl = document.querySelector('#timer');
-
+const stuName = document.getElementById('studentName');
 
 let secondsLeft = 60;
 let timerInterval;
@@ -20,7 +20,17 @@ let timerInterval;
 
   setTime();
 
+
+
+  // When button is clicked, student info. is grabbed from local storage, radio buttons gets queried by the name,
+  // green or red color is applied to the label by using parentElement based on checked element with a value of 0 or 1, 
+  // timer stops and we record the no. of right answers, percentage score and time.
+  //Finally we take the student name and school from local storage, the recorded info from the test and add the info.
+  //in local storage to be used on the sign in page in order to show previous results.
   btn.addEventListener("click", () => {
+
+    const studentN = localStorage.getItem('student');
+    const studentData = JSON.parse(studentN);
 
     const select1 = document.querySelector("input[name='q1']:checked");
     const select2 = document.querySelector("input[name='q2']:checked");
@@ -59,5 +69,21 @@ let timerInterval;
 
       clearInterval(timerInterval);
         
-      resultEl.textContent = `You got ${score} out of 5 right. Your score is ${percentage}.00%. you finished the test in ${timeLeft} seconds`;
+      resultEl.textContent = `${studentData.studentName} got ${score} out of 5 right. Your score is ${percentage}.00%. you finished the test in ${timeLeft} seconds`;
+      
+      const studentGrades = {
+          studentName: studentData.studentName,
+          studentSchool: studentData.studentSchool,
+          studentScore: score,
+          studentPercent: percentage,
+          studentTime: secondsLeft
+      }  
+  
+       localStorage.setItem('studentGrades', JSON.stringify(studentGrades));
+    
+    
     });
+
+    
+    
+     
