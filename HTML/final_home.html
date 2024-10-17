@@ -35,44 +35,21 @@
                     <option value="school4">UCF West</option>
                 </select>
                 <button type="submit" id="submitButton">Submit</button>
-                <table id="previousResults">
-                    <thead>
-                        <h2 style="text-align: center;">Previous Test Results</h2>
-                        <tr>
-                            <th>Name</th>
-                            <th>School</th>
-                            <th>Right Answer</th>
-                            <th>Score</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="color: red; font-weight: bold;">
-                            <td id="name" style="text-align: center;"></td>
-                            <td id="school" style="text-align: center;"></td>
-                            <td id="rightAnswer" style="text-align: center;"></td>
-                            <td id="score" style="text-align: center;"></td>
-                            <td id="time" style="text-align: center;"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div id="previousResults">
+            
+                </div>
                 
                 <script>
-                     
+
 
                     const studentN = localStorage.getItem('studentGrades');
                     const studentData = JSON.parse(studentN);
-                    const sName = document.getElementById('name');
-                    const sSchool = document.getElementById('school');
-                    const sScore = document.getElementById('rightAnswer');
-                    const sPercent = document.getElementById('score');
-                    const sTime = document.getElementById('time');
+                    const studentInfo = document.getElementById('previousResults');
 
-                    sName.textContent = studentData.studentName;
-                    sSchool.textContent = studentData.studentSchool;
-                    sPercent.textContent = studentData.studentPercent;
-                    sScore.textContent = studentData.studentScore;
-                    sTime.textContent = `${studentData.studentTime} secs`;
+                
+                    studentInfo.textContent = `Name: ${studentData}`;
+
+                    
                     
                     
 
