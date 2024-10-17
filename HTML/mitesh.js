@@ -69,7 +69,7 @@ let timerInterval;
 
       clearInterval(timerInterval);
         
-      resultEl.textContent = `${studentData.studentName} got ${score} out of 5 right. Your score is ${percentage}.00%. you finished the test in ${timeLeft} seconds`;
+      resultEl.textContent = `${studentData.studentName} got ${score} out of 5 right. Your score is ${percentage}%. You finished the test in ${timeLeft} seconds.`;
       
       const studentGrades = {
           studentName: studentData.studentName,

@@ -13,22 +13,14 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav {
+#title {
     background: #333;
     color: white;
     padding: 15px;
     text-align: center;
-}
-
-nav a {
-    color: white;
     margin: 0 15px;
     text-decoration: none;
     font-size: 18px;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
 
 main {

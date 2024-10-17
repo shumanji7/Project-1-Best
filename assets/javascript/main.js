@@ -101,7 +101,7 @@ function generateStudentId() {
             } else {select5.parentElement.style.color = "#ff2400";   
             };
         
-            resultEl.textContent = `You got ${score} out of 5 right`;            
+            resultEl.textContent = `You got ${score} out of 5 right.`;            
         
         //INCLUDED ROBERTO - BEGIN
         const arrayRadios = [];
@@ -148,8 +148,6 @@ function generateStudentId() {
             clearInterval(timerStart);
         });
         }
-
-       
 
         window.onload = function () {
             let max = 60,
