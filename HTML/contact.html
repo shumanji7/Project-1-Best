@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <h1>Contact Us</h1>
+    <h1>Welcome!</h1>
     <p>We'd love to hear from you! See our other work on Github!</p>
 
     <h2>Follow Us on our Githubs!</h2>
 
-    <!-- //Created a group of links, while sourcing an individual link to our exact profiles on github.// -->
+    <!-- //Created a group of links, while directing an individual link to our exact profiles on github.// -->
 
     <div class="link-container-group">
         <div class="link-container img1">
@@ -32,42 +32,51 @@
         </div>
     </div>
 
-<!-- Made a contact form that only retains information on a local source not globally trying to show that I can grab information and hopefully bring that to a further stage. -->
-    <h2>Contact Form</h2>
-    <form id="contactForm">
+<!-- //Made a contact form that only retains information on a local source not globally trying to show that I can grab information and hopefully bring that to a further stage. -->
+    <h2>Contact Us!</h2>
+    <form id="contactUs">
+        <!-- //creates a label tag to use the elements described in the input -->
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
         <label for="email">Email:</label><br>
         <input type="email" id="email" name="email"><br>
         <label for="message">Message:</label><br>
         <textarea id="message" name="message"></textarea><br>
+        <!-- //creates a submit button -->
         <button type="submit">Submit</button>
     </form>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        //added eventListener
+        document.getElementById('contactUs').addEventListener('submit', function(event) {
             event.preventDefault();
         
+            //collecting values from the information given above
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
+            //basic alert to make sure everythings filled out
             if (!name || !email || !message) {
                 alert("Please enter information on all fields of the form.");
                 return;
             }
+            //using the collectedData to retain information
             const collectedData = {
                 name: name,
                 email: email,
                 message: message
             };
+            //localStorage and logging to console
             localStorage.setItem('formData', JSON.stringify(collectedData));
             console.log ('Collected Data:', collectedData);
         });
         </script>
 
+<!-- //go back button -->
     <button onclick="goBack()">Go Back</button>
 
     <script>
+        // go back to original startup page
         function goBack() {
             window.location.href = "./final_home.html";
         }
