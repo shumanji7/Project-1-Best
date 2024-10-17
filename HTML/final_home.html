@@ -21,9 +21,6 @@
             <h2>Student</h2>
             <p>Provide the following information:</p>
             <form>
-                <!-- /* RFS INCLUDE HTML CODE */ -->
-                <label for="student-id">Student ID:</label>
-                <input type="text" id="student-id" name="student-id" required readonly>
     
                 <label for="student-name">Student Name:</label>
                 <input type="text" id="student-name" name="student-name" required>
@@ -40,8 +37,19 @@
                 <button type="submit" id="submitButton">Submit</button>
                 <script>
                     document.getElementById('submitButton').addEventListener('click', function() {
-                        confirm("Are you ready? Timer will begin!")
-                        window.location.href = "../index.html";
+                        event.preventDefault();
+                        
+                        const isconfirmed = confirm("Are you ready? Timer will begin!");
+                        if (isconfirmed) {
+                            window.location.href = "./mitesh.html";
+                        }
+
+                    const student = {
+                        studentName: document.getElementById('student-name').value,
+                        studentSchool: document.querySelector('#school-name').value
+                    }    
+                    localStorage.setItem('student', JSON.stringify(student));
+
                     });
                 </script>
             </form>                
@@ -50,7 +58,6 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Student Assessment. All rights reserved.</p>
         <div id="contact">
             <h2>Contact</h2>
             <button id="contactButton">Contact Us</button>        
