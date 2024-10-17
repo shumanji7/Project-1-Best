@@ -76,7 +76,7 @@ let timerInterval;
           studentSchool: studentData.studentSchool,
           studentScore: score,
           studentPercent: percentage,
-          studentTime: secondsLeft
+          studentTime: timeLeft
       }  
   
        localStorage.setItem('studentGrades', JSON.stringify(studentGrades));
