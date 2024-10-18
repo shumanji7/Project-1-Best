@@ -10,6 +10,16 @@
 
     <header>
         <h1>Are you smarter than a fifth grader?</h1>
+        <nav>
+            <ul>
+                <li>
+            <a href="#about">About</a>
+                </li>
+                <li>
+            <a href="#contact">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
     </header>
   
     <nav>
@@ -18,7 +28,7 @@
     
     <main>
         <h1>Welcome!</h1>
-        <p>Today you shall embark on a once in a lifetime opportunity by testing your mental skills to their limits. However there's a catch, you only have 1 minute to finish this exam before an atom bomb gets dropped on your head and you fail completely. Fill out the required information below and good luck!</p>
+        <p id="about">Today you shall embark on a once in a lifetime opportunity by testing your mental skills to their limits. However there's a catch, you only have 1 minute to finish this exam before an atom bomb gets dropped on your head and you fail completely. Fill out the required information below and good luck!</p>
         <div id="info">
             <h2>Student</h2>
             <p>Provide the following information:</p>
@@ -67,8 +77,8 @@
                     //added the textContent to the Data collected to be stored
                     document.getElementById('name').textContent = studentData.studentName || '';
                     document.getElementById('school').textContent = studentData.studentSchool || '';
-                    document.getElementById('rightAnswer').textContent = studentData.studentPercent || '';
-                    document.getElementById('score').textContent = studentData.studentScore || '';
+                    document.getElementById('rightAnswer').textContent = studentData.studentScore || '0';
+                    document.getElementById('score').textContent = studentData.studentPercent || '0';
                     document.getElementById('time').textContent = studentData.studentTime ? `${studentData.studentTime}` : '';
 
                     //removed the excess
