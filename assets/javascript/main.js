@@ -72,8 +72,7 @@ function generateStudentId() {
         const select4 = document.querySelector("input[name='q4']:checked");
         const select5 = document.querySelector("input[name='q5']:checked");
     
-            
-        let score = +select1.value + +select2.value + +select3.value + +select4.value + +select5.value;
+        let score = 0 + +select1.value + +select2.value + +select3.value + +select4.value + +select5.value;
 
 
             if (select1.value === "1") {
