@@ -3,93 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Quiz</title>
+    <title>Welcome!</title>
     <link rel="stylesheet" href="./assets/css/final.css">
-    <link rel="javascript" href="./assets/javascript/main.js">
 </head>
-
 <body>
 
-<header>
-    <h1>BASIC STUDENT ASSESSMENT</h1>
-</header>
+    <header>
+        <h1>Are you smarter than a fifth grader?</h1>
+    </header>
+  
+    <nav>
 
-<nav>
-    <a href="#info">Welcome to Basic Student Assessment Test</a>
-</nav>
+    </nav>
+    
+    <main>
+        <h1>Welcome!</h1>
+        <p>Today you shall embark on a once in a lifetime opportunity by testing your mental skills to their limits. However there's a catch, you only have 1 minute to finish this exam before an atom bomb gets dropped on your head and you fail completely. Fill out the required information below and good luck!</p>
+        <div id="info">
+            <h2>Student</h2>
+            <p>Provide the following information:</p>
+            <!-- //added class id to collect info// -->
+            <form id="studentForm">
+                <label for="student-name">Student Name:</label>
+                <input type="text" id="student-name" name="student-name" required>
+        
+                <label for="school-name">Select School:</label>
+                <select id="school-name" name="school-name" required>
+                    <option value="University of Michigan">University of Michigan</option>
+                    <option value="Oxford University">Oxford University</option>
+                    <option value="USC">USC</option>
+                    <option value="Texas">University of Texas</option>
+                </select>
+                <button type="submit" id="submitButton">Submit</button>
+                
+                <table id="previousResults">
+                    <thead>
+                        <h2 style="text-align: center;">Previous Test Results</h2>
+                        <tr>
+                            <th>Name</th>
+                            <th>School</th>
+                            <th>Right Answer</th>
+                            <th>Score</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="color: red; font-weight: bold;">
+                            <td id="name" style="text-align: center;"></td>
+                            <td id="school" style="text-align: center;"></td>
+                            <td id="rightAnswer" style="text-align: center;"></td>
+                            <td id="score" style="text-align: center;"></td>
+                            <td id="time" style="text-align: center;"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <script>
+                    // Retrieve and display previous test results
+                    const studentN = localStorage.getItem('studentGrades');
+                    const studentData = studentN ? JSON.parse(studentN) : {};
+                    
+                    //removed studentInfo to textContent
+                    //added the textContent to the Data collected to be stored
+                    document.getElementById('name').textContent = studentData.studentName || '';
+                    document.getElementById('school').textContent = studentData.studentSchool || '';
+                    document.getElementById('rightAnswer').textContent = studentData.studentPercent || '';
+                    document.getElementById('score').textContent = studentData.studentScore || '';
+                    document.getElementById('time').textContent = studentData.studentTime ? `${studentData.studentTime}` : '';
 
-<main>
-        <form>
-            <div class="question">
-                <h2>Question 1: What is the capital of France?</h2>
-                <div class="options">
-                    <label><input type="radio" name="q1" value=""> A) Berlin</label><br>
-                    <label><input type="radio" name="q1" value=""> B) Madrid</label><br>
-                    <label><input type="radio" name="q1" value="1"> C) Paris</label>
-                </div>
-            </div>   
-            <div class="question">
-                <h2>Question 2: Which of the following is a programming language?</h2>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="1"> A) HTML</label><br>
-                    <label><input type="radio" name="q2" value=""> B) JPEG</label><br>
-                    <label><input type="radio" name="q2" value=""> C) CSS</label>
-                </div>
-            </div>
-            <div class="question">
-                <h2>Question 3: What is the largest planet in our solar system?</h2>
-                <div class="options">
-                    <label><input type="radio" name="q3" value=""> A) Earth</label><br>
-                    <label><input type="radio" name="q3" value="1"> B) Jupiter</label><br>
-                    <label><input type="radio" name="q3" value=""> C) Mars</label>
-                </div>
-            </div>
-            <div class="question">
-                <h2>Question 4: Which animal is known as the "King of the Jungle"?</h2>
-                <div class="options">
-                    <label><input type="radio" name="q4" value=""> A) Elephant</label><br>
-                    <label><input type="radio" name="q4" value="1"> B) Lion</label><br>
-                    <label><input type="radio" name="q4" value=""> C) Tiger</label>
-                </div>
-            </div>
-            <div class="question">
-                <h2>Question 5: What is the process by which plants make their food called?</h2>
-                <div class="options">
-                    <label><input type="radio" name="q5" value="1"> A) Photosynthesis</label><br>
-                    <label><input type="radio" name="q5" value=""> B) Respiration</label><br>
-                    <label><input type="radio" name="q5" value=""> C) Digestion</label>
-                </div>
-            </div>                                                                 
-        </form>
-    </div>
-    <button id="checkAnswer" type="submit">Submit Answers</button>
+                    //removed the excess
+                    // Handle form submission
+                    document.getElementById('studentForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent default form submission
 
- 
-    <div id="grades">
-        <h2>Grades</h2>
-        <p>Your grades for the semester will be listed here.</p>
-    </div>
+                        const student = {
+                            studentName: document.getElementById('student-name').value,
+                            studentSchool: document.querySelector('#school-name').value
+                        };
+                        localStorage.setItem('student', JSON.stringify(student));
 
-    <div id="timer">
-        You have <br><span id="time">1:00</span> <br>remaining!
-    </div>
+                        const isConfirmed = confirm("Are you ready? Timer will begin!");
+                        if (isConfirmed) {
+                            window.location.href = "./HTML/mainTest.html"; // Redirect to next page
+                        }
+                    });
+                </script>
+            </form>                
+        </div>
+    </main>
 
-    <script src="/assets/javascript/main.js"></script>
-   
-</main>
-
-<footer>
-    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
-    <div id="contact">
-        <h2>Contact</h2>
-        <button id="contactButton">Contact Us</button>
-
+    <footer>
+        <div id="contact">
+            <h2>Contact</h2>
+            <button id="contactButton">Contact Us</button>        
+        </div>
         <script>
             document.getElementById('contactButton').addEventListener('click', function() {
-                window.location.href = "HTML/contact.html";
+                window.location.href = "./HTML/contact.html";
             });
         </script>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

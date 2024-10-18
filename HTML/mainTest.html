@@ -65,7 +65,6 @@
         <p>Your grades for the semester will be listed here.</p>
     </div>
 
-    <div id="studentName">Student Name</div>
 
     <div id="timer">
       
@@ -75,15 +74,19 @@
 </main>
 
 <footer>
-    <p>&copy; 2024 Student Assessment. All rights reserved.</p>
+    <p>&copy; 2024 Student Assessment.</p>
     <div id="contact">
         <h2>Contact</h2>
         <button id="contactButton">Contact Us</button>
+        <button onclick="goBack()">Go Back</button>
 
         <script>
             document.getElementById('contactButton').addEventListener('click', function() {
                 window.location.href = "contact.html"
             });
+            function goBack() {
+            window.location.href = "/index.html";
+        }
         </script>
     </div>
 </footer>
