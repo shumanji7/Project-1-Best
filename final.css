@@ -19,9 +19,10 @@ header h1 {
 }
 
 header nav {
-    margin-right: 75px;
+    margin-right: 40px;
     float: right;
-    font-size: 25px;
+    font-size: 18px;
+    margin-top: 10px;
 }
 a, ul {
     text-decoration: none;
