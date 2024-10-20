@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #007BFF;
+    background: #1a1e4c;
     color: white;
     padding: 20px;
     text-align: center;
@@ -40,7 +40,7 @@ main {
 }
 
 main h2 {
-    color: #007BFF;
+    color: #1a1e4c;
     margin-bottom: 20px;
 }
 
@@ -63,7 +63,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #007BFF;
+    background-color: #1a1e4c;
     color: white;
     padding: 10px 20px;
     border: none;
