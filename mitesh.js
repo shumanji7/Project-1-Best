@@ -13,7 +13,7 @@ let timerInterval;
 
       if (secondsLeft === 0) {
         clearInterval(timerInterval);
-          window.location.href = "./Time_Up.html";
+          window.location.href = "Time_Up.html";
       }      
     }, 1000);
   };
