@@ -6,8 +6,18 @@ Once the user has entered their information, we ensure they are ready to proceed
 
 We also have a contact page if the user wishes to submit a plea for their poor performance or just have any general questions or comments.
 
-In total, we have four HTML documents, two CSS documents, and two JS documents in our project. Each HTML page connects to another to ensure smooth transitions through the site. There is also one .gif file, one .jpg file and four url's to link images to our contact page. 
+In total, we have four HTML documents, three CSS documents, and one JS documents in our project. Each HTML page connects to another to ensure smooth transitions through the site. We are using bootstrap as our CSS framework as well.
 
-*screenshots here*
+![HomePage](<Screenshot 2024-10-21 172120.png>)
+
+![TestPage1](<Screenshot 2024-10-21 172203.png>)
+
+![TestPage2](<Screenshot 2024-10-21 172234.png>)
+
+![ContactPage](<Screenshot 2024-10-21 172252.png>)
+
+![TimerPage](<Screenshot 2024-10-21 172419.png>)
 
 https://vscode.dev/github/shumanji7/Project-1-Best/blob/main/index.html
+
+https://shumanji7.github.io/Project-1-Best/
