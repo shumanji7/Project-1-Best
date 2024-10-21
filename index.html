@@ -27,7 +27,7 @@
             <p>Provide the following information:</p>
             <!-- //added class id to collect info// -->
             <form id="studentForm" style="background-color: #1a1e4c; color: white; align-items: center;">
-                <label for="student-name">Student Name:</label>
+                <label for="student-name" style="padding-top: 20px;">Student Name:</label>
                 <input type="text" id="student-name" name="student-name" required>
         
                 <label for="school-name">Select School:</label>
@@ -37,7 +37,7 @@
                     <option value="USC">USC</option>
                     <option value="Texas">University of Texas</option>
                 </select>
-                <button type="submit" id="submitButton" style="background-color: teal; color: white; margin-bottom: 40px;">Submit</button>
+                <button type="submit" id="submitButton" style="border-radius: 12px ; border:none; background-color: teal; color: white; margin-bottom: 40px;">Submit</button>
                 
                 <table id="previousResults">
                     <thead>
@@ -98,7 +98,7 @@
     <footer>
         <div id="contact">
             <h2>Contact</h2>
-            <button id="contactButton">Contact Us</button>        
+            <button id="contactButton" style="border:none; border-radius: 12px">Contact Us</button>        
         </div>
         <script>
             document.getElementById('contactButton').addEventListener('click', function() {
