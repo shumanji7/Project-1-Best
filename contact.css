@@ -93,6 +93,7 @@ button:hover {
     flex: 1 1 150px;
     max-width: 100px; 
     height: 100px;
+    cursor: pointer;
 }
 
 .img1 {
@@ -131,3 +132,4 @@ button:hover {
 
     }
     
+
