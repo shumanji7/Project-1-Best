@@ -15,20 +15,20 @@
     <!-- //Created a group of links, while directing an individual link to our exact profiles on github.// -->
 
     <div class="link-container-group">
-        <div class="link-container img1">
-            <a href="https://github.com/nikweisbloom">Nik Weisbloom</a>
+        <div class="link-container img1" id="nick">
+            <label for="nick" style="left: 4%; bottom: 25%; color: gold;">Nick Weisbloom</label>
         </div>
-        <div class="link-container img2">
-            <a href="https://github.com/roberto4tisantos">Roberto Santos</a>
+        <div class="link-container img2" id="roberto">
+            <label for="roberto" style="bottom: 10%; left: 15%; color: deeppink;">Roberto</label>
         </div>
-        <div class="link-container img3">
-            <a href="https://github.com/mitesh18us">Mitesh Patel</a>
+        <div class="link-container img3" id="mitesh">
+            <label for="roberto" style="bottom: 28%; right: 5%; color:darkturquoise;">Mitesh Patel</label>
         </div>
-        <div class="link-container img4">
-            <a href="https://github.com/khalilnusradinov">Khalil</a>
+        <div class="link-container img4" id="khalil">
+            <label for="roberto" style="bottom: 10%; left: 22%; color:white;">Khalil</label>
         </div>
-        <div class="link-container img5">
-            <a href="https://github.com/shumanji7">Jacob Shuman</a>
+        <div class="link-container img5" id="jacob">
+            <label for="roberto" style="bottom: 12%; right: 5%; color: lawngreen;">Jacob Shuman</label>
         </div>
     </div>
 
@@ -70,6 +70,26 @@
             localStorage.setItem('formData', JSON.stringify(collectedData));
             console.log ('Collected Data:', collectedData);
         });
+
+        document.getElementById('nick').addEventListener('click', function(){
+            window.location ="https://github.com/nikweisbloom";
+        })
+
+        document.getElementById('roberto').addEventListener('click', function(){
+            window.location ="https://github.com/roberto4tisantos";
+        })
+
+        document.getElementById('mitesh').addEventListener('click', function(){
+            window.location ="https://github.com/mitesh18us";
+        })
+
+        document.getElementById('khalil').addEventListener('click', function(){
+            window.location ="https://github.com/khalilnusradinov";
+        })
+
+        document.getElementById('jacob').addEventListener('click', function(){
+            window.location ="https://github.com/shumanji7";
+        })
         </script>
 
 <!-- //go back button -->

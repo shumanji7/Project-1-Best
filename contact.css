@@ -1,7 +1,7 @@
 body {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     margin: 0;
     padding: 20px;
     background-color: #4f4f4f;
@@ -36,16 +36,6 @@ p {
     font-size: 20px;
 }
 
-a {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-a:hover {
-    text-decoration: underline;
-    color:rgb(148, 12, 246);
-}
-
 div {
     font-size: 20px;
 }
@@ -61,7 +51,7 @@ form {
     align-items: center; 
 }
 
-label {
+form label {
     display: block;
     margin: 10px 0 5px;
     text-align: left; 
@@ -94,13 +84,15 @@ button:hover {
 }
 
 .link-container {
-    border: 1px solid #ccc;
+    position: relative;
+    border: 3px solid white;
     border-radius: 5px;
     padding: 80px;
     margin: 20px; 
     background-color: #f9f9f9;
     flex: 1 1 150px;
     max-width: 100px; 
+    height: 100px;
 }
 
 .img1 {
@@ -129,3 +121,13 @@ button:hover {
     background-position: center;
     background-size: cover;
 }
+
+.link-container label {
+    color: white;
+    position: absolute;
+    font-weight: bold;
+    text-align: center; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+    
