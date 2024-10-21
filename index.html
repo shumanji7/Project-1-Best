@@ -24,10 +24,9 @@
         <h1>Welcome!</h1>
         <p id="about">Today you shall embark on a once in a lifetime opportunity by testing your mental skills to their limits. However there's a catch, you only have 1 minute to finish this exam before an atom bomb gets dropped on your head and you fail completely. Fill out the required information below and good luck!</p>
         <div id="info">
-            <h2>Student</h2>
             <p>Provide the following information:</p>
             <!-- //added class id to collect info// -->
-            <form id="studentForm">
+            <form id="studentForm" style="background-color: #1a1e4c; color: white; align-items: center;">
                 <label for="student-name">Student Name:</label>
                 <input type="text" id="student-name" name="student-name" required>
         
@@ -38,11 +37,11 @@
                     <option value="USC">USC</option>
                     <option value="Texas">University of Texas</option>
                 </select>
-                <button type="submit" id="submitButton">Submit</button>
+                <button type="submit" id="submitButton" style="background-color: teal; color: white; margin-bottom: 40px;">Submit</button>
                 
                 <table id="previousResults">
                     <thead>
-                        <h2>Previous Test Results</h2>
+                        <h5 style="bottom: 0;">Previous Test Results</h5>
                         <tr>
                             <th style="text-align: center;">Name</th>
                             <th style="text-align: center;">School</th>
